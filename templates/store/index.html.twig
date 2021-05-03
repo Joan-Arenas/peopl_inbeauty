@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}People InBeauty{% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+
+    {# Masthead -----------------------------------------------------------------------------------------------------   -#}
+
+    <header class="masthead">
+        <div class="container">
+
+            <div class="masthead-heading text-light">People <span class="text-success">In</span>BEAUTY</div>
+            <div class="masthead-subheading text-white">Soins, visage, corps et cheveux</div>
+
+
+        </div>
+    </header>
+    {# FIN Masthead-------------------------------------------------------------------------------------------------- #}
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1>NOTRE CATALOGUE</h1>
+            <hr class="bg-success p-1" size="50px">
+
+        </div>
+    </section>
+
+    <div class="container">
+{# ***** FORMULAIRE DE RECHERHCE ***** #}
+        <div class="row ">
+            <div class="col-md-2">
+                {# DEBUT RECHERHCE#}
+                {{ include('partials/_recherche.html.twig') }}
+                {# FIN RECHERCHE#}
+            </div>
+            <div id="catalog" class="col-md-10">
+
+                {# DEBUT CATALOGUE #}
+                {{ include('partials/_catalogue.html.twig') }}
+                {# FIN CATALOGUE #}
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

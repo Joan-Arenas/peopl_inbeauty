@@ -1,0 +1,66 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block page_title %}
+    {{ titre_page }}
+{% endblock %}
+
+{#// ***** POUR REVENIR A LA PAGE D'ACCEUIL DEPUIS LE DASHBOARD *****#}
+{% block header_logo %}
+    <a class="logo {{ ea.dashboardTitle|length > 14 ? 'logo-long' }}"
+       title="{{ ea.dashboardTitle|striptags }}" href="{{ path('store_accueil') }}">
+        {{ ea.dashboardTitle|raw }}
+    </a>
+{% endblock header_logo %}
+
+{% block page_content %}
+
+    {# ****** DETAILS COMMANDES ***** #}
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <span style="font-size: 2rem; color: orange"><i class="fas fa-shopping-cart"></i></span>
+                    <p class="card-text">Total de commandes</p>
+                    <a href=" {{ path('BackOffice_accueil') }}" class="btn btn-primary">Voir les commandes</a>
+                </div>
+            </div>
+        </div>
+
+        {# ****** PRODUITS EN STOCK ***** #}
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <span style="font-size: 2rem; color: coral"><i class="fas fa-thermometer-three-quarters"></i></span>
+                    <p class="card-text"> Produit en stock</p>
+                    <a href="#" class="btn btn-primary">Voir les produits</a>
+                </div>
+            </div>
+        </div>
+
+        {# ****** REVENUS TOTAL ***** #}
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <span style="font-size: 2rem; color: green"><i class="far fa-money-bill-alt"></i></span>
+                    <p class="card-text">Revenus total</p>
+                    <a href="#" class="btn btn-primary">Voir les payements</a>
+                </div>
+            </div>
+        </div>
+
+
+        {# ****** COMPTES USERS ***** #}
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    <span style="font-size: 2rem; color: lightslategrey"><i class="fas fa-users"></i></span>
+                    <p class="card-text">Total de commandes</p>
+                    <a href="#" class="btn btn-primary">Voir les users</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

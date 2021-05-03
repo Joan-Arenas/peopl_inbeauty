@@ -1,0 +1,15 @@
+<fieldset class="border-success card-footer">
+    <h4 class="text-center text-success font-italic">Recherche</h4>
+</fieldset>
+{{ form_start(formRecherche) }}
+                {{ form_row (formRecherche.chaine) }}
+<h5>Catégories</h5>
+<hr class="bg-success">
+{{ form_row (formRecherche.categories) }}
+<hr class="bg-success">
+<h5>Marques</h5>
+{{ form_row (formRecherche.marques) }}
+<hr class="bg-success">
+
+<button class="btn btn-primary" type="submit">Recherche</button>
+{{ form_end(formRecherche) }}

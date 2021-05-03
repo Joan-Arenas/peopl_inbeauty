@@ -1,0 +1,105 @@
+{# DEBUT NAVBAR--------------------------------------------------------------------------------------------------           -#}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top ">
+    <a class="navbar-brand" href="{{ path('store_accueil') }}">
+        <img class="showing" src="{{ asset('assets/img/logo.png') }} " width="155px" height="70px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav text-uppercase">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('store_accueil') }}"><span class="text-success">Accueil</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('store_accueil') }}"><i class="fas fa-list-ul"></i> Catalogue</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav text-uppercase ml-auto">
+            {% if is_granted('ROLE_ADMIN') %}
+                {#- ---Dashboard-----           -#}
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ path('BackOffice_accueil') }}">
+                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                    </a>
+                </li>
+            {% endif %}
+
+
+            {% if is_granted('IS_ANONYMOUS') %}
+                {#- ---LOGIN-----           -#}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_login') }}"><i class="fas fa-user"></i> LOGIN</a>
+                </li>
+
+                {#- ---REGISTER-----           -#}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_register') }}">REGISTER</a>
+                </li>
+            {% endif %}
+
+
+
+            {% if is_granted('IS_ANONYMOUS') == false %}
+                {#- ---COMPTE-----           -#}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mon Compte
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href=" {{ path('app_logout') }} "><i class="fas fa-power-off"></i>
+                            Déconnexion</a>
+                    </div>
+                </li>
+            {% endif %}
+
+            {#- ---Panier-----           -#}
+            <li class="nav-item dropdown">
+                <a href="{{ path('panier_contenu') }}" class="nav-link dropdown-toggle" id="panierDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-shopping-cart"></i> Panier
+                </a>
+
+                <div class="dropdown-menu navPanier" aria-labelledby="navbarDropdown">
+                    <table class="table table-sm border-0 panier">
+                        <tbody class="contenu-panier"> </tbody>
+                    </table>
+                </div>
+
+
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="{{ path('panier_contenu') }}" role="button"
+                   aria-haspopup="true" aria-expanded="false">
+
+                </a>
+
+            </li>
+
+            {#- ---BARRE RECHERCHE-----           -#}
+            <form class="form-inline my-2 my-lg-0 ml-auto">
+                <input class="form-control mr-sm-1" type="search" placeholder="Recherche" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
+                </button>
+            </form>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+{# FIN NAVBAR ---------------------------------------------------------------------------------------------------           -#}
+

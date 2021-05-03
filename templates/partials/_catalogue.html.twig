@@ -1,0 +1,72 @@
+{# DEBUT CATALOGUE--------------------------------------------------------------------------------------------------         -#}
+
+<main role="main" id="catalogue">
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+
+                {# ***** ON FAIT LES CONDITIONS QUI NOUS PERMETENT D'AFFICHER LES PRODUITS DE LA BDD SUR NOTRE PAGE CATALOGUE ***** #}
+                {% if produits is empty %}
+                    <div class="alert alert-info" role="alert">
+                        Produits non disponibles
+                    </div>
+                {% else %}
+                    {% for produit in produits %}
+                        {# ***** INJECTE LES PRODUITS ***** #}
+                        <div id="{{ produit.slug }}" class="col-md-4">
+                            <div class="card mb-4 shadow-lg">
+                                <a href="{{ path('store_produit',{id:produit.id, slug:produit.slug}) }}">
+                                    <img class="bd-placeholder-img  card-img-top" width="100%" height="225"
+                                         src="{{ vich_uploader_asset(produit, 'fichierPhoto') }}"
+                                         alt="{{ produit.nom }}">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="text-muted text-right">{{ produit.marque.nom }}</h6>
+                                    <h4 class="text-right">{{ produit.nom }}</h4>
+
+                                    <span class="float-right"> {{ produit.prix }} €</span>
+                                    <br>
+
+                                    <div class="d-flex justify-content-between float-right">
+                                        <div class="btn-group">
+
+                                            <a class="btn btn-sm btn-light"
+                                               href="{{ path('store_produit',{id:produit.id, slug:produit.slug}) }}">
+                                                En savoir plus
+                                            </a>
+                                            <a href="{{ path('panier_ajouter',{id:produit.id, slug:produit.slug}) }}" class="btn btn-sm btn-success ">
+                                                <i class="fas fa-shopping-cart "></i>
+                                                Ajouter
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        <p class="float-right">
+            <a class="nav-link text-white" href="{{ path('store_accueil') }}">
+                <span class="text-success">Accueil</span></a>
+            <a class="nav-link text-white" href="#catalogue">Notre Catalogue</a>
+            <a class="nav-link text-white" href="#contact">Contact</a>
+
+        </p>
+        <p><h4>People <span class="text-success">In</span>BEAUTY</h4>Droits d'auteur © 2021 Tous droits réservés</p>
+
+        <p>Propulsé par DIEZ ARENAS Joan</p>
+    </div>
+</footer>
+
+{# FIN CATALOGUE ---------------------------------------------------------------------------------------------------         -#}
+
