@@ -89,7 +89,7 @@ class __TwigTemplate_2c54e851b9ec8f5da776c631e354b0ecf4b36cf1b20b868ce53689bbeba
             // line 31
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("BackOffice_accueil");
             echo "\">
-                        <i class=\"fas fa-tachometer-alt\"></i>Dashboard
+                        <i class=\"fas fa-tachometer-alt\"></i> Dashboard
                     </a>
                 </li>
             ";
@@ -141,20 +141,17 @@ class __TwigTemplate_2c54e851b9ec8f5da776c631e354b0ecf4b36cf1b20b868ce53689bbeba
         }
         // line 67
         echo "<li class=\"nav-item dropdown\">
-                <a href=\"";
+                <a class=\"nav-link \" href=\"";
         // line 68
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier_contenu");
-        echo "\" class=\"nav-link dropdown-toggle\" id=\"panierDropdown\" role=\"button\"
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_index");
+        echo "\" id=\"panierDropdown\" role=\"button\"
                    data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                     <i class=\"fas fa-shopping-cart\"></i> Panier
                 </a>
 
-                <div class=\"dropdown-menu navPanier\" aria-labelledby=\"navbarDropdown\">
-                    <table class=\"table table-sm border-0 panier\">
-                        <tbody class=\"contenu-panier\"> </tbody>
-                    </table>
-                </div>
-
+                ";
+        // line 78
+        echo "
 
             </li>
 
@@ -162,20 +159,15 @@ class __TwigTemplate_2c54e851b9ec8f5da776c631e354b0ecf4b36cf1b20b868ce53689bbeba
             <li class=\"nav-item dropdown\">
                 <a class=\"nav-link\" href=\"";
         // line 84
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier_contenu");
-        echo "\" role=\"button\"
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_index");
+        echo "\"
                    aria-haspopup=\"true\" aria-expanded=\"false\">
 
                 </a>
 
             </li>";
-        // line 92
-        echo "<form class=\"form-inline my-2 my-lg-0 ml-auto\">
-                <input class=\"form-control mr-sm-1\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
-                <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-search\"></i>
-                </button>
-            </form>
-        </ul>
+        // line 98
+        echo "        </ul>
 
     </div>
 
@@ -203,7 +195,7 @@ class __TwigTemplate_2c54e851b9ec8f5da776c631e354b0ecf4b36cf1b20b868ce53689bbeba
 
     public function getDebugInfo()
     {
-        return array (  173 => 92,  165 => 84,  146 => 68,  143 => 67,  135 => 60,  127 => 54,  125 => 52,  120 => 49,  114 => 46,  111 => 45,  107 => 41,  104 => 40,  102 => 38,  98 => 36,  90 => 31,  87 => 30,  85 => 28,  74 => 20,  68 => 17,  62 => 14,  50 => 5,  46 => 4,  43 => 3,);
+        return array (  170 => 98,  162 => 84,  154 => 78,  146 => 68,  143 => 67,  135 => 60,  127 => 54,  125 => 52,  120 => 49,  114 => 46,  111 => 45,  107 => 41,  104 => 40,  102 => 38,  98 => 36,  90 => 31,  87 => 30,  85 => 28,  74 => 20,  68 => 17,  62 => 14,  50 => 5,  46 => 4,  43 => 3,);
     }
 
     public function getSourceContext()
@@ -239,7 +231,7 @@ class __TwigTemplate_2c54e851b9ec8f5da776c631e354b0ecf4b36cf1b20b868ce53689bbeba
                 {#- ---Dashboard-----           -#}
                 <li class=\"nav-item \">
                     <a class=\"nav-link\" href=\"{{ path('BackOffice_accueil') }}\">
-                        <i class=\"fas fa-tachometer-alt\"></i>Dashboard
+                        <i class=\"fas fa-tachometer-alt\"></i> Dashboard
                     </a>
                 </li>
             {% endif %}
@@ -275,23 +267,23 @@ class __TwigTemplate_2c54e851b9ec8f5da776c631e354b0ecf4b36cf1b20b868ce53689bbeba
 
             {#- ---Panier-----           -#}
             <li class=\"nav-item dropdown\">
-                <a href=\"{{ path('panier_contenu') }}\" class=\"nav-link dropdown-toggle\" id=\"panierDropdown\" role=\"button\"
+                <a class=\"nav-link \" href=\"{{ path('cart_index') }}\" id=\"panierDropdown\" role=\"button\"
                    data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                     <i class=\"fas fa-shopping-cart\"></i> Panier
                 </a>
 
-                <div class=\"dropdown-menu navPanier\" aria-labelledby=\"navbarDropdown\">
+                {#<div class=\"dropdown-menu navPanier\" aria-labelledby=\"navbarDropdown\">
                     <table class=\"table table-sm border-0 panier\">
                         <tbody class=\"contenu-panier\"> </tbody>
                     </table>
-                </div>
+                </div>#}
 
 
             </li>
 
 
             <li class=\"nav-item dropdown\">
-                <a class=\"nav-link\" href=\"{{ path('panier_contenu') }}\" role=\"button\"
+                <a class=\"nav-link\" href=\"{{ path('cart_index') }}\"
                    aria-haspopup=\"true\" aria-expanded=\"false\">
 
                 </a>
@@ -299,11 +291,12 @@ class __TwigTemplate_2c54e851b9ec8f5da776c631e354b0ecf4b36cf1b20b868ce53689bbeba
             </li>
 
             {#- ---BARRE RECHERCHE-----           -#}
-            <form class=\"form-inline my-2 my-lg-0 ml-auto\">
+           {# <form class=\"form-inline my-2 my-lg-0 ml-auto\">
                 <input class=\"form-control mr-sm-1\" type=\"search\" placeholder=\"Recherche\" aria-label=\"Search\">
                 <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-search\"></i>
                 </button>
-            </form>
+
+            </form>#}
         </ul>
 
     </div>

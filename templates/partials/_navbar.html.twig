@@ -29,7 +29,7 @@
                 {#- ---Dashboard-----           -#}
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ path('BackOffice_accueil') }}">
-                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
                     </a>
                 </li>
             {% endif %}
@@ -65,23 +65,23 @@
 
             {#- ---Panier-----           -#}
             <li class="nav-item dropdown">
-                <a href="{{ path('panier_contenu') }}" class="nav-link dropdown-toggle" id="panierDropdown" role="button"
+                <a class="nav-link " href="{{ path('cart_index') }}" id="panierDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-shopping-cart"></i> Panier
                 </a>
 
-                <div class="dropdown-menu navPanier" aria-labelledby="navbarDropdown">
+                {#<div class="dropdown-menu navPanier" aria-labelledby="navbarDropdown">
                     <table class="table table-sm border-0 panier">
                         <tbody class="contenu-panier"> </tbody>
                     </table>
-                </div>
+                </div>#}
 
 
             </li>
 
 
             <li class="nav-item dropdown">
-                <a class="nav-link" href="{{ path('panier_contenu') }}" role="button"
+                <a class="nav-link" href="{{ path('cart_index') }}"
                    aria-haspopup="true" aria-expanded="false">
 
                 </a>
@@ -89,11 +89,12 @@
             </li>
 
             {#- ---BARRE RECHERCHE-----           -#}
-            <form class="form-inline my-2 my-lg-0 ml-auto">
+           {# <form class="form-inline my-2 my-lg-0 ml-auto">
                 <input class="form-control mr-sm-1" type="search" placeholder="Recherche" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i>
                 </button>
-            </form>
+
+            </form>#}
         </ul>
 
     </div>

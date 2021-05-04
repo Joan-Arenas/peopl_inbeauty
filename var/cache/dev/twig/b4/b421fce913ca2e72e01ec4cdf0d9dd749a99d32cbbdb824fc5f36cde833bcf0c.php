@@ -110,7 +110,7 @@ class __TwigTemplate_c7826e174ef3bd8e9f3847a507eb8638f73683e80bae76e907c70347360
                                             </a>
                                             <a href=\"";
                 // line 38
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("panier_ajouter", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 38), "slug" => twig_get_attribute($this->env, $this->source, $context["produit"], "slug", [], "any", false, false, false, 38)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_add", ["id" => twig_get_attribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 38)]), "html", null, true);
                 echo "\" class=\"btn btn-sm btn-success \">
                                                 <i class=\"fas fa-shopping-cart \"></i>
                                                 Ajouter
@@ -145,7 +145,10 @@ class __TwigTemplate_c7826e174ef3bd8e9f3847a507eb8638f73683e80bae76e907c70347360
         echo "\">
                 <span class=\"text-success\">Accueil</span></a>
             <a class=\"nav-link text-white\" href=\"#catalogue\">Notre Catalogue</a>
-            <a class=\"nav-link text-white\" href=\"#contact\">Contact</a>
+            <a class=\"nav-link text-white\" href=\"";
+        // line 62
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
+        echo "\">Contact</a>
 
         </p>
         <p><h4>People <span class=\"text-success\">In</span>BEAUTY</h4>Droits d'auteur © 2021 Tous droits réservés</p>
@@ -175,7 +178,7 @@ class __TwigTemplate_c7826e174ef3bd8e9f3847a507eb8638f73683e80bae76e907c70347360
 
     public function getDebugInfo()
     {
-        return array (  144 => 59,  132 => 49,  129 => 48,  113 => 38,  107 => 35,  97 => 28,  92 => 26,  88 => 25,  82 => 22,  78 => 21,  73 => 19,  67 => 17,  65 => 16,  60 => 15,  54 => 11,  51 => 10,  43 => 3,);
+        return array (  150 => 62,  144 => 59,  132 => 49,  129 => 48,  113 => 38,  107 => 35,  97 => 28,  92 => 26,  88 => 25,  82 => 22,  78 => 21,  73 => 19,  67 => 17,  65 => 16,  60 => 15,  54 => 11,  51 => 10,  43 => 3,);
     }
 
     public function getSourceContext()
@@ -217,7 +220,7 @@ class __TwigTemplate_c7826e174ef3bd8e9f3847a507eb8638f73683e80bae76e907c70347360
                                                href=\"{{ path('store_produit',{id:produit.id, slug:produit.slug}) }}\">
                                                 En savoir plus
                                             </a>
-                                            <a href=\"{{ path('panier_ajouter',{id:produit.id, slug:produit.slug}) }}\" class=\"btn btn-sm btn-success \">
+                                            <a href=\"{{ path(\"cart_add\", {id:produit.id}) }}\" class=\"btn btn-sm btn-success \">
                                                 <i class=\"fas fa-shopping-cart \"></i>
                                                 Ajouter
                                             </a>
@@ -241,7 +244,7 @@ class __TwigTemplate_c7826e174ef3bd8e9f3847a507eb8638f73683e80bae76e907c70347360
             <a class=\"nav-link text-white\" href=\"{{ path('store_accueil') }}\">
                 <span class=\"text-success\">Accueil</span></a>
             <a class=\"nav-link text-white\" href=\"#catalogue\">Notre Catalogue</a>
-            <a class=\"nav-link text-white\" href=\"#contact\">Contact</a>
+            <a class=\"nav-link text-white\" href=\"{{ path('contact') }}\">Contact</a>
 
         </p>
         <p><h4>People <span class=\"text-success\">In</span>BEAUTY</h4>Droits d'auteur © 2021 Tous droits réservés</p>

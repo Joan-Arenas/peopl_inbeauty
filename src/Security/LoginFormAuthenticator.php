@@ -74,7 +74,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     }
 
-
+// Pour traiter le password encodé correspond au pasword en bd de l'USER
     public function checkCredentials($credentials, UserInterface $user)
     {
        // dd($user);

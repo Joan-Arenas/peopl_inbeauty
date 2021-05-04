@@ -61,20 +61,6 @@ class DashboardController extends AbstractDashboardController
     }
 
 
-    /**
-     * @Route("/", name="commandes")
-     */
-    // ***** ICI ON ECRIT LA METHODE POUR COMPTER LES USER *****
-
-    public function commandes(): Response
-    {
-
-        return $this->render('EasyAdminBundle::menu.html.twig', [
-            "nb_users" => $this->commandeRepository->findAll(),
-
-
-        ]);
-    }
 
 // ***** CONFIGURATION DU DASHBOARD *****
 
@@ -83,6 +69,7 @@ class DashboardController extends AbstractDashboardController
         return Dashboard::new()
             ->setTitle('People InBeauty')
             ->setFaviconPath('assets/img/INBEAUTY.png');
+
     }
 
 //***** POUR FAIRE LES LIENS A GAUCHE DANS LE SLID DU DASHOBOARD *****

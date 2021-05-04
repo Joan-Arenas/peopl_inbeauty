@@ -35,7 +35,7 @@
                                                href="{{ path('store_produit',{id:produit.id, slug:produit.slug}) }}">
                                                 En savoir plus
                                             </a>
-                                            <a href="{{ path('panier_ajouter',{id:produit.id, slug:produit.slug}) }}" class="btn btn-sm btn-success ">
+                                            <a href="{{ path("cart_add", {id:produit.id}) }}" class="btn btn-sm btn-success ">
                                                 <i class="fas fa-shopping-cart "></i>
                                                 Ajouter
                                             </a>
@@ -59,7 +59,7 @@
             <a class="nav-link text-white" href="{{ path('store_accueil') }}">
                 <span class="text-success">Accueil</span></a>
             <a class="nav-link text-white" href="#catalogue">Notre Catalogue</a>
-            <a class="nav-link text-white" href="#contact">Contact</a>
+            <a class="nav-link text-white" href="{{ path('contact') }}">Contact</a>
 
         </p>
         <p><h4>People <span class="text-success">In</span>BEAUTY</h4>Droits d'auteur © 2021 Tous droits réservés</p>

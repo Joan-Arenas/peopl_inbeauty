@@ -127,22 +127,20 @@ class __TwigTemplate_4ca1e0e0cab96688152f6449d50fac77d6b1e7aa6efdedfcea0d6dd1fac
         echo "
     ";
         // line 19
-        echo "    <div class=\"row\">
+        echo "
+    <div class=\"row\">
         <div class=\"col-sm-3\">
             <div class=\"card\">
                 <div class=\"card-body\">
                     <span style=\"font-size: 2rem; color: orange\"><i class=\"fas fa-shopping-cart\"></i></span>
                     <p class=\"card-text\">Total de commandes</p>
-                    <a href=\" ";
-        // line 25
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("BackOffice_accueil");
-        echo "\" class=\"btn btn-primary\">Voir les commandes</a>
+                    <a href=\"\" class=\"btn btn-primary\">Voir les commandes</a>
                 </div>
             </div>
         </div>
 
         ";
-        // line 31
+        // line 32
         echo "        <div class=\"col-sm-3\">
             <div class=\"card\">
                 <div class=\"card-body\">
@@ -154,7 +152,7 @@ class __TwigTemplate_4ca1e0e0cab96688152f6449d50fac77d6b1e7aa6efdedfcea0d6dd1fac
         </div>
 
         ";
-        // line 42
+        // line 43
         echo "        <div class=\"col-sm-3\">
             <div class=\"card\">
                 <div class=\"card-body\">
@@ -167,7 +165,7 @@ class __TwigTemplate_4ca1e0e0cab96688152f6449d50fac77d6b1e7aa6efdedfcea0d6dd1fac
 
 
         ";
-        // line 54
+        // line 55
         echo "        <div class=\"col-sm-3\">
             <div class=\"card\">
                 <div class=\"card-body\">
@@ -199,7 +197,7 @@ class __TwigTemplate_4ca1e0e0cab96688152f6449d50fac77d6b1e7aa6efdedfcea0d6dd1fac
 
     public function getDebugInfo()
     {
-        return array (  171 => 54,  158 => 42,  146 => 31,  138 => 25,  130 => 19,  127 => 17,  117 => 16,  104 => 12,  98 => 11,  93 => 10,  83 => 9,  70 => 5,  60 => 4,  37 => 2,);
+        return array (  169 => 55,  156 => 43,  144 => 32,  130 => 19,  127 => 17,  117 => 16,  104 => 12,  98 => 11,  93 => 10,  83 => 9,  70 => 5,  60 => 4,  37 => 2,);
     }
 
     public function getSourceContext()
@@ -222,13 +220,14 @@ class __TwigTemplate_4ca1e0e0cab96688152f6449d50fac77d6b1e7aa6efdedfcea0d6dd1fac
 {% block page_content %}
 
     {# ****** DETAILS COMMANDES ***** #}
+
     <div class=\"row\">
         <div class=\"col-sm-3\">
             <div class=\"card\">
                 <div class=\"card-body\">
                     <span style=\"font-size: 2rem; color: orange\"><i class=\"fas fa-shopping-cart\"></i></span>
                     <p class=\"card-text\">Total de commandes</p>
-                    <a href=\" {{ path('BackOffice_accueil') }}\" class=\"btn btn-primary\">Voir les commandes</a>
+                    <a href=\"\" class=\"btn btn-primary\">Voir les commandes</a>
                 </div>
             </div>
         </div>

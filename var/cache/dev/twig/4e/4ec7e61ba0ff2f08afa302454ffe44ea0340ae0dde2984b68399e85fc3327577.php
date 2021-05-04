@@ -228,10 +228,9 @@ class __TwigTemplate_ad8830e20ab855891d58fb6e74f773526945d25451ba20dfda922674443
     <script src=\"https://kit.fontawesome.com/ec63adeb54.js\" crossorigin=\"anonymous\"></script>
     ";
         // line 71
-        echo "    <script src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/panier.js"), "html", null, true);
-        echo "\" defer></script>
-
+        echo "    ";
+        // line 72
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -253,7 +252,7 @@ class __TwigTemplate_ad8830e20ab855891d58fb6e74f773526945d25451ba20dfda922674443
 
     public function getDebugInfo()
     {
-        return array (  231 => 71,  220 => 61,  210 => 60,  193 => 47,  187 => 46,  183 => 43,  180 => 42,  175 => 41,  170 => 37,  167 => 35,  157 => 34,  144 => 25,  134 => 24,  115 => 7,  102 => 74,  100 => 60,  93 => 55,  91 => 34,  84 => 29,  82 => 24,  77 => 22,  71 => 18,  61 => 10,  55 => 7,  47 => 1,);
+        return array (  233 => 72,  231 => 71,  220 => 61,  210 => 60,  193 => 47,  187 => 46,  183 => 43,  180 => 42,  175 => 41,  170 => 37,  167 => 35,  157 => 34,  144 => 25,  134 => 24,  115 => 7,  102 => 74,  100 => 60,  93 => 55,  91 => 34,  84 => 29,  82 => 24,  77 => 22,  71 => 18,  61 => 10,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -328,7 +327,7 @@ class __TwigTemplate_ad8830e20ab855891d58fb6e74f773526945d25451ba20dfda922674443
     <!-- Font Awesome icons (free version)-->
     <script src=\"https://kit.fontawesome.com/ec63adeb54.js\" crossorigin=\"anonymous\"></script>
     {#<script src=\"{{ asset('js/app.js')}}\" defer></script>#}
-    <script src=\"{{ asset('js/panier.js')}}\" defer></script>
+    {#<script src=\"{{ asset('js/panier.js')}}\" defer></script>#}
 
 {% endblock %}
 

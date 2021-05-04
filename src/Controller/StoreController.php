@@ -70,7 +70,7 @@ class StoreController extends AbstractController
             [
                 'titre_page' => $titrePage = "Produit",
                 'titre_section' => $titreSection = "page produit",
-                'produit' => $produit = $this->produitRepository->find($id)
+
             ]);
     }
 }
